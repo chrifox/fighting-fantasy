@@ -49,6 +49,10 @@ button {
   align-items: center;
 }
 
+#author {
+  padding: 0.4em;
+}
+
 #nextButton {
   font-size: 20px;
   padding: 0.4em 0.8em;

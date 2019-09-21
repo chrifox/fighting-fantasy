@@ -1,27 +1,44 @@
 // This file contains story content for custom app
 
+const title = 'Fighting Fantasy Adventure'
 const author = 'Mr Fox'
 
 const story = [
   // Start page
   {
-    subtitle: 'Get started!',
+    id: 0,
+    screenTitle: 'Welcome to the Fighting Fantasy Adventure',
   },
-  // Page 1
   {
-    // title: '',
-    subtitle: 'There is a fork in the road, do you...',
+    id: 1,
+    screenTitle: 'You are travelling and there is a fork in the road, do you...',
     options: [
-      { choice: 'Turn left?', outcome: 0 },
-      { choice: 'Turn right?', outcome: 1 },
+      { choice: 'Turn left', outcome: 2 },
+      { choice: 'Turn right', outcome: 3 },
+    ],
+  },
+  {
+    id: 2,
+    screenTitle: 'You turned left, now there is another fork...',
+    options: [
+      { choice: 'Turn left', outcome: DEFEAT_OUTCOME },
+      { choice: 'Turn right', outcome: 1 },
+    ],
+  },
+  {
+    id: 3,
+    screenTitle: 'You turned right, and see a chest in front of you...',
+    options: [
+      { choice: 'Open the chest', outcome: VICTORY_OUTCOME },
+      { choice: 'Leave the chest alone', outcome: DEFEAT_OUTCOME },
     ],
   },
 ]
 
 const defeatPage = {
-  subtitle: 'You have been defeated',
+  screenTitle: 'You have been defeated',
 }
 
 const victoryPage = {
-  subtitle: 'You are victorious!',
+  screenTitle: 'You are victorious!',
 }
