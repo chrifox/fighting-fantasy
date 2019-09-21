@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Your app title and who made it -->
+  <title>Fighting Fantasy Adventure</title>
+  <meta name="description" content="Fighting Fantasy Adventure">
+  <meta name="author" content="Mr No Name">
+
+  <!-- This is the font that will be used in your app -->
+  <!-- Choose a different one from https://fonts.google.com -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400&display=swap" rel="stylesheet">
+
+  <!-- This imports your styles, go here to change your font if needed -->
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+  <!-- Your final content will be rendered here -->
+  <div id="app">
+    <!-- This will be updated in the story to show the current stage -->
+    <h1 id="title"></h1>
+    <!-- This will contain the current screen content -->
+    <div id="screen"></div>
+  </div>
+
+  <!-- Index contains the core logic -->
+  <script src="js/index.js"></script>
+  <!-- Story contains the customisation of the storyline -->
+  <script src="js/story.js"></script>
+  <!-- Start simply separates instantiation from story.js -->
+  <script src="js/start.js"></script>
+</body>
+</html>
