@@ -1,6 +1,6 @@
 // This file contains story content for custom app
 
-const title = 'Fighting Fantasy Adventure'
+const title = 'Fighting Fantasy Adventure Builder'
 const author = 'Mr Fox'
 
 const story = [
@@ -19,10 +19,10 @@ const story = [
   },
   {
     id: 2,
-    screenTitle: 'You turned left, now there is another fork...',
+    screenTitle: 'You turned left, and see a huge troll in front of you...',
     options: [
-      { choice: 'Turn left', outcome: DEFEAT_OUTCOME },
-      { choice: 'Turn right', outcome: 1 },
+      { choice: 'Attack the troll', outcome: DEFEAT_OUTCOME },
+      { choice: 'Run away', outcome: 1 },
     ],
   },
   {
@@ -30,7 +30,7 @@ const story = [
     screenTitle: 'You turned right, and see a chest in front of you...',
     options: [
       { choice: 'Open the chest', outcome: VICTORY_OUTCOME },
-      { choice: 'Leave the chest alone', outcome: DEFEAT_OUTCOME },
+      { choice: 'Leave the chest alone', outcome: 1 },
     ],
   },
 ]
