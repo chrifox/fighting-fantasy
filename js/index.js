@@ -1,7 +1,7 @@
 // This file contains base app logic
 
-const VICTORY_OUTCOME = 42
-const DEFEAT_OUTCOME = 66
+const VICTORY_OUTCOME = 42000
+const DEFEAT_OUTCOME = 66000
 
 // Initialise mutable variables
 let prevChoice = null,
@@ -12,8 +12,11 @@ pageNum = 0 // Track current page number
 
 const updateHtml = (id, html) => document.getElementById(id).innerHTML = html
 const chooseOption = i => {
+  let selectedOption
   currentOptions.map((opt, index) => {
-    document.getElementById(`option${index}`).style.background = index === i ? '#447' : 'transparent'
+    selectedOption = document.getElementById(`option${index}`)
+    selectedOption.style.color = index === i ? '#fff' : '#111'
+    selectedOption.style.background = index === i ? 'rgba(0,0,0,0.4)' : 'transparent'
   })
   choice = i
   outcome = currentOptions[i].outcome
@@ -42,13 +45,19 @@ const createButtonsHtml = () => {
 }
 
 // Create a new page
-const createPage = ({ screenTitle, options }) => {
+const createPage = ({ id, text, options }) => {
+  // Use h2 for intro and end screens
+  const isBookendScreen = (id === 0 || id === VICTORY_OUTCOME || id === DEFEAT_OUTCOME)
+  const description = text || 'No text found'
   // Store current options for outside access
   currentOptions = options
-  const subtitle = screenTitle ? `<h2>${screenTitle}</h2>` : ''
+  const subtitle = isBookendScreen
+  ? `<h2>${description}</h2>`
+  : `<p class="description">${description}</p>`
   const optionsHtml = createOptionsList(options)
   const buttonsHtml = createButtonsHtml()
-  const screenContent = `${subtitle}${optionsHtml}${buttonsHtml}`
+  const pageNumber = !isBookendScreen ? `<div class="page-number">ID: ${id}</div>` : ''
+  const screenContent = `${subtitle}${optionsHtml}${buttonsHtml}${pageNumber}`
   updateHtml('screen', screenContent)
 }
 
@@ -76,5 +85,5 @@ const pressNext = () => {
     pageNum++
     createPage(story.find(page => page.id === outcome))
   }
-  choice = null    
+  choice = null
 }

@@ -75,6 +75,9 @@ Once you're happy with your page, go back to your browser and refresh the page.
 
 Click start and you should see your new page!
 
+You can customise the styling if you wish by going to the `css/cistom.css` file.
+There you will find a few options with explanations on how to configure them.
+
 ### More information
 
 Here there are some further notes on the JavaScript itself if you want to know more.

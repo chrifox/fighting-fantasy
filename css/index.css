@@ -1,19 +1,43 @@
 /* Global styling is done here */
 
+/* Fonts */
+/*
+font-family: 'Lato', sans-serif;
+font-family: 'EB Garamond', serif;
+font-family: 'Princess Sofia', cursive;
+*/
+
 /* Apply font to all elements */
 * {
-  font-family: 'Lato', sans-serif;
+  font-family: 'EB Garamond', serif;
 }
 
 body {
   margin: 0;
   height: 100vh;
+  overflow: hidden;
   color: #fff;
-  background: #334;
+  background-color: #334;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-family: 'Princess Sofia', cursive;
+  font-size: 32px;
 }
 
 p {
-  font-weight: 300;
+  font-family: 'Lato', sans-serif;
+}
+
+.description {
+  font-size: 18px;
 }
 
 a {
@@ -21,6 +45,7 @@ a {
 }
 
 button {
+  font-family: 'Lato', sans-serif;
   border: none;
   outline: none;
   cursor: pointer;
@@ -34,19 +59,22 @@ button {
   min-height: 100%;
 }
 
-#title {
-  font-size: 2.5em;
-}
+#title {}
 
 #screen {
-  height: 600px;
-  width: 900px;
-  padding: 20px;
-  border: 1px solid #ccc;
+  box-sizing: border-box;
+  height: 500px;
+  width: 800px;
+  padding: 100px;
+  color: #111;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  background-image: url('../images/scroll.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #author {
@@ -61,10 +89,22 @@ button {
   border-radius: 4px;
 }
 
+.options-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 80%;
+  margin-bottom: 20px;
+}
+
 .option {
   display: block;
-  margin-bottom: 20px;
-  padding: 0.2em 0.5em;
-  border: 1px solid #ccc;
+  padding: 0 1em;
   user-select: none;
+}
+
+.page-number {
+  font-family: 'Lato', san-serif;
+  font-size: 16px;
+  color: #111;
 }
